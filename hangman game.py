@@ -1,14 +1,20 @@
 word = list(input("word: ").lower())
+while " " in word:
+    word[word.index(" ")] = "-"
+
 for pr in range(20):
     print("\n")
 
 list = word.copy()
 l = len(word)
-tries = 3
+tries = 5
 i, a ,li = 0, 0, []
 
 for i in range(l):
-    list[i] = "?"
+    if list[i] != "-":
+        list[i] = "_"
+    else:
+        next
 
 while list != word:
     lett = str(input("letter: "))
@@ -18,11 +24,11 @@ while list != word:
             li.append(0)
 
     if 0 in li:
-        print(list, f'\n{tries = }\n')
+        print(" ".join(list), f'\n{tries = }\n')
 
     else:
         tries -= 1
-        print(list, f'\n-1 try | {tries = }\n')
+        print(" ".join(list), f'\n-1 try | {tries = }\n')
 
     li = []
     if tries <= 0:
